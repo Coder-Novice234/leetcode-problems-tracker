@@ -6,17 +6,17 @@ from datetime import datetime
 from functools import wraps
 
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY', 'your-secret-key-change-this-in-production')  # Change this in production!
+app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
 
 # Configuration
 CSV_FILE = 'all.csv'
 PERSISTENCE_FILE = 'problems_data.json'
 
-# Default credentials (change these for production)
+# Default credentials for free hosting
 DEFAULT_CREDENTIALS = {
-    'admin': os.environ.get('ADMIN_PASSWORD', 'password123'),
-    'user': os.environ.get('USER_PASSWORD', 'leetcode2025'),
-    'student': os.environ.get('STUDENT_PASSWORD', 'study123')
+    'admin': os.environ.get('ADMIN_PASSWORD', 'admin123'),
+    'user': os.environ.get('USER_PASSWORD', 'user123'),
+    'demo': os.environ.get('DEMO_PASSWORD', 'demo123')
 }
 
 # Authentication decorator
@@ -211,5 +211,4 @@ def reset_data():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    debug = os.environ.get('FLASK_ENV') == 'development'
-    app.run(debug=debug, host='0.0.0.0', port=port)
+    app.run(debug=False, host='0.0.0.0', port=port)

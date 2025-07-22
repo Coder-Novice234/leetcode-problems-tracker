@@ -65,11 +65,11 @@ A Flask web application to track your LeetCode problem-solving progress with aut
 
 ## 🔑 Default Login Credentials
 
-| Username | Password    | Purpose         |
-|----------|-------------|-----------------|
-| admin    | password123 | Administrator   |
-| user     | leetcode2025| Regular user    |
-| student  | study123    | Student account |
+| Username | Password | Purpose         |
+|----------|----------|-----------------|
+| admin    | admin123 | Administrator   |
+| user     | user123  | Regular user    |
+| demo     | demo123  | Demo account    |
 
 > 💡 **Tip**: Click on any credential in the login page to auto-fill the form!
 
@@ -119,30 +119,38 @@ Att-Prep-DSA/
 
 ## 🌐 Hosting on GitHub
 
-### Yes, you can definitely host this on GitHub! Here are your options:
+### 🆓 **YES! You can host this for FREE!** Here are the best options:
 
-### Option 1: Heroku (Recommended)
-1. Create Heroku account
-2. Connect your GitHub repository
-3. Deploy with one click
-4. **URL**: `https://your-app-name.herokuapp.com`
+### Option 1: Railway ⭐ (RECOMMENDED)
+1. Go to [railway.app](https://railway.app) 
+2. "Deploy from GitHub repo"
+3. Connect your repository
+4. **Automatic deployment!**
+5. **$5/month free credits** - perfect for small apps
+6. **URL**: `https://your-app.railway.app`
 
-### Option 2: Railway
-1. Connect GitHub repository at [railway.app](https://railway.app)
-2. Automatic deployment on every push
-3. Free tier available
+### Option 2: Render ⭐ (ALWAYS FREE)
+1. Go to [render.com](https://render.com)
+2. "New Web Service"
+3. Connect GitHub repository  
+4. Build Command: `pip install -r requirements.txt`
+5. Start Command: `gunicorn app:app`
+6. **URL**: `https://your-app.onrender.com`
 
-### Option 3: Render
-1. Connect repository at [render.com](https://render.com)
-2. Zero-config deployment
-3. Free SSL certificates
+### Option 3: Heroku (Popular)
+1. Go to [heroku.com](https://heroku.com)
+2. Create new app
+3. Connect GitHub repository
+4. Deploy branch
+5. **550 free hours/month**
+6. **URL**: `https://your-app.herokuapp.com`
 
 ### Option 4: PythonAnywhere
-1. Upload code to [pythonanywhere.com](https://pythonanywhere.com)
-2. Configure WSGI application
-3. Free tier for small applications
+1. Go to [pythonanywhere.com](https://pythonanywhere.com)
+2. Upload code and configure web app
+3. **Free tier available**
 
-> 📖 **Detailed deployment instructions** are available in [`DEPLOYMENT.md`](DEPLOYMENT.md)
+> 📖 **Detailed FREE hosting guide** is available in [`FREE_HOSTING.md`](FREE_HOSTING.md)
 
 ## 🔧 Configuration
 
@@ -162,9 +170,9 @@ FLASK_ENV=production
 Edit the credentials in `app.py`:
 ```python
 DEFAULT_CREDENTIALS = {
-    'admin': os.environ.get('ADMIN_PASSWORD', 'password123'),
-    'user': os.environ.get('USER_PASSWORD', 'leetcode2025'),
-    'student': os.environ.get('STUDENT_PASSWORD', 'study123')
+    'admin': os.environ.get('ADMIN_PASSWORD', 'admin123'),
+    'user': os.environ.get('USER_PASSWORD', 'user123'),
+    'demo': os.environ.get('DEMO_PASSWORD', 'demo123')
 }
 ```
 
